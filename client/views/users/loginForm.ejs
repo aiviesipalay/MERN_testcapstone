@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="/static/css/login.css">
+  <script src="https://kit.fontawesome.com/32fddcfc17.js" crossorigin="anonymous"></script>
+
+
+<style>
+   .main-content{
+    background-color:  #f3e9cd !important;
+    /* border:#0b0b0b 2px solid !important; */
+    box-shadow: 15px, 15px, 15px rgba(0,0,0,.5) !important;
+    border-radius: 2px !important;
+
+  }
+  .col-md-4{
+    background-color: rgb(244, 145, 145) !important ;
+     /* border: 1px solid rgb(0,0,0,.5) !important;  */
+     border-radius: 2px !important;
+  }
+  .col-md-8, input{
+    background-color:#f3e9cd !important;
+    border: 1px solid #f3e9cd ;
+  }
+  .checkbox{
+    position: relative;
+    right: 35%;
+  }
+  .buttonSub{
+    margin-left: 20%;
+  }
+  h2{
+    color:rgb(244, 145, 145) !important;
+  }
+  .bi-eye {
+  position: relative;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.row {
+  position: relative;
+}
+
+.toggle-password {
+  position: relative;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.form__input {
+  padding-right: 10px; /* Adjust this value to make room for the icon */
+}
+
+
+</style>
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+  <%- include('../partials/flash') %>
+
+  <!-- Main Content -->
+  <div class="container-fluid mt-5">
+    <div class="row main-content bg-success text-center">
+      <div class="col-md-4 text-center company__info">
+
+        <span>
+          <img src="static/assets/logo.png" alt="logo"/>
+        </span>
+       
+      </div>
+      <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
+        <div class="container-fluid">
+          <div class="row mt-2">
+          </div>
+          <div class="row">
+            <form action="/" method="POST" class="form-group mt-3">
+              <div class="row">
+                <input type="text" name="username" id="username" class="form__input" placeholder="Username">
+              </div>
+              <div class="row">
+                <input type="password" name="password" id="password" class="form__input" placeholder="Password">
+              </div>
+              <div class="row text-center">
+               
+                <span class="text-center checkbox">Show Password
+                 <input type="checkbox" name="remember_me" id="show_password" class=""></span> 
+               </div>
+              <div class="row buttonSub">
+                <input type="submit" value="Submit" class="btn">
+              </div>
+            </form>
+          </div>
+          <div class="row">
+            <p>Don't have an account? <a href="/register">Register Here</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+
+
+<script>
+  const checkbox = document.getElementById('show_password');
+  const passwordField = document.getElementById('password');
+
+  checkbox.addEventListener('change', function() {
+    if (checkbox.checked) {
+      passwordField.type = 'text';
+    } else {
+      passwordField.type = 'password';
+    }
+  });
+</script>
+
+</body>
+
+</html>
